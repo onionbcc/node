@@ -1,0 +1,63 @@
+<% include ./header %>
+
+	<div class="container">
+		<a href=""></a>
+		<!-- 当前位置 -->
+		<ol class="breadcrumb">
+			<li>
+				当前位置
+			</li>
+			<!-- 当前栏目 -->
+			<li class="active">
+				当前栏目：
+				<a href="">
+					<%= itemss.name%>
+				</a>
+			</li>
+			<!-- 当前文章标题 -->
+			<li class="active">
+				当前文章：
+				<a href="">
+					<%= articles[0].title%>
+				</a>
+			</li>
+			<li class="active">文章详情</li>
+		</ol>
+		<!-- 当前位置 END-->
+
+		<!-- 详情 -->
+		<div class="container ">
+			<div class="row">
+				<div class="col-md-8 breadcrumb">
+					<h3>
+						<a href="#">
+							<%= articles[0].title%>
+						</a>
+					</h3>
+					<span class="news">
+						日期：<a href=""><%- articles[0].ctime.toLocaleString() %></a>
+					</span>
+					<span class="news">
+						作者：<a href=""><%-articles[0].author %></a>
+					</span>
+					<span class="news">
+						关键字:<a href=""><%-articles[0].keywords %></a>
+					</span>
+					
+					<p>
+						<%-articles[0].content %>
+					</p>
+				</div>
+				<div class="col-md-1">更多<br><a href="">
+					<%= itemss.name%></a>
+				</div>
+				<div class="col-md-3 info ">
+					<img src="/<%= articles[0].imgurl%>" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- <%= itemss%> -->
+	<!-- <%= articles[0].title%> -->
+
+		<% include ./footer %>

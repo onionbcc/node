@@ -1,0 +1,27 @@
+<% include ./header %>
+
+	<!-- 栏目 -->
+	<div class="container">
+		<div class="row">
+			<% items.forEach(function(val){ %>
+				<div class="col-md-6">
+					<div class="list-group">
+						<!-- 栏目 -->
+						<a href="/list/<%= val._id %>" class="list-group-item active">
+							<%= val.name %>
+						</a>
+						<!--标题-->
+						<% val.articleList.forEach(function(articledata){ %>
+							<a href="/detail/<%= articledata._id %>" class="list-group-item">
+								<%= articledata.title %>
+							</a>
+							<% }) %>
+					</div>
+				</div>
+			<% }) %>
+		</div>
+	</div>
+	<!-- 栏目 end -->
+
+
+	<% include ./footer %>

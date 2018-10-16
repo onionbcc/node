@@ -1,0 +1,89 @@
+<% include ./header %>
+
+    <div class="container">
+        <!-- 当前位置 -->
+        <ol class="breadcrumb">	
+            <li>
+                当前位置
+            </li>
+            <!-- 当前栏目 -->
+            <!-- <% items.forEach(function(val){ %>
+                <li><a href="/list/<%= val._id %>">当前栏目::<%= val.name %></a></li>
+            <% })%> -->
+            <li class="active">文章列表</li>
+        </ol>
+        <!-- 当前位置end -->
+
+        <!-- 列表 -->
+        <% articles.forEach(function(val){ %>
+            <div class="container ">
+                <div class="row">
+                    <div class="col-md-8 breadcrumb new">
+                        <a href="/detail/<%= val._id %>">
+                            <h3>
+                                <%=val.title %>
+                            </h3>
+                        </a>
+                        
+                        <span>日期：
+                            <a href=""><%=val.ctime.toLocaleString() %></a> / 
+                        </span>
+                        <span>作者：
+                            <a href=""><%=val.author %></a> / 
+                        </span>
+                        <span>关键字：
+                            <a href=""><%-val.keywords %></a>
+                        </span>
+                        <p>
+                            <%-val.description %>
+                        </p>
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-2  imgs">
+                        <img src="/<%= val.imgurl%>" alt="">
+                    </div>
+                </div>
+            </div>
+         <% }) %>
+        
+ <!-- 分页 -->
+ <nav aria-label="Page navigation">
+        <ul class="pagination">
+            <li>
+                <a href="/list/<%= articles[0].itemId %>?page=1" aria-label="Previous">
+                    <span aria-hidden="true">首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="/list/<%= articles[0].itemId %>?page=<%= page-1 %>" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+
+            <% for(var i=1;i<=maxPageNumber;i++){ %>
+            <li>
+                <a href="/list/<%= articles[0].itemId %>?page=<%= i %>">
+                    <%= i %>
+                </a>
+            </li>
+            <% } %>
+
+            <li>
+                <a href="/list/<%= articles[0].itemId %>?page=<%= -(-page-1) %>" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+            <li>
+                <a href="/list/<%= articles[0].itemId %>?page=<%= maxPageNumber %>" aria-label="Previous">
+                    <span aria-hidden="true">尾页</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+    </div>
+
+
+
+<% include ./footer_min %>

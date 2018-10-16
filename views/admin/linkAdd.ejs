@@ -1,0 +1,36 @@
+<% include ./header %>
+
+	<ol class="breadcrumb">
+	  <li><a href="#">栏目管理</a></li>
+	  <li class="active">添加友链</li>
+	</ol>
+
+	<div class="col-md-4"></div>
+	<div class="col-md-4">
+		<form class="formAdd" action="/admin/linkInsert" method="post">
+
+			<div class="input-group">
+			  <span class="input-group-addon">友链名称</span>
+			  <input type="text" class="form-control" name="name">
+			</div>
+
+			<div class="input-group">
+			  <span class="input-group-addon">友链地址</span>
+			  <input type="text" class="form-control" name="info">
+			</div>
+
+			<div class="input-group">
+					<span class="input-group-addon">友链排序</span>
+					<input type="text" class="form-control" name="order">
+				</div>
+
+			<div class="input-group">
+				<button type="submit" class="btn btn-primary">提交</button>
+			</div>
+
+		</form>
+	</div>
+	<div class="col-md-4"></div>
+
+
+<% include ./footer %>

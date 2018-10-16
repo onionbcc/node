@@ -1,0 +1,44 @@
+<% include ./header-min %>
+	<div class="container login">
+		<h1>请登录</h1>
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<form class="formAdd" action="/admin/doLogin" method="post">
+					<div class="input-group">
+					  <span class="input-group-addon"> 账 &nbsp; 号 </span>
+					  <input type="text" class="form-control" name="username">
+					</div>
+					<div class="input-group">
+					  <span class="input-group-addon"> 密 &nbsp; 码 </span>
+					  <input type="password" class="form-control" name="password">
+					</div>
+					<div class="input-group">
+					  <span class="input-group-addon">验&nbsp;证&nbsp;码&nbsp;</span>
+					  <div class="form-control">
+						 <a href=""><img src="/admin/code"></a> &nbsp;
+						  <input style="width: 100px" type="text"  name="code">			  	
+					  </div>
+					</div>
+					<div class="input-group">
+							<span class="input-group-addon">其他方式登录</span>
+							<div class="form-control">
+							 <span class="glyphicon glyphicon-magnet"></span>	<a href="https://wx.qq.com/"> 微信 </a> 
+							 <span class="glyphicon glyphicon-globe"></span><a href="http://www.qq.com/"> qq </a> 	  	
+							 <span class="glyphicon glyphicon-piggy-bank"></span><a href="https://weibo.com/"> 微博 </a> 	  	
+
+							</div>
+						</div>
+					<div class="input-group">
+						<input type="submit" value="登录">
+					</div>
+				</form>				
+
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+
+
+
+	</div>
+<% include ./footer-min %>
